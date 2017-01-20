@@ -21,7 +21,17 @@ def encrypt_caesar(plaintext):
     Encrypts plaintext using a Caesar cipher.
     Add more implementation details here.
     """
-    pass  # Your implementation here
+    cipherText = ''
+    for i in plainText:
+        if (97 <= ord(i) <= 122):
+            a = (((ord(i) - 97) + 3) % 26) + 97
+            cipherText += chr(a)
+        elif (65 <= ord(i) <= 90):
+            a = (((ord(i) - 65) + 3) % 26) + 65
+            cipherText += chr(a)
+        else:
+            cipherText += i
+    return cipherText
 
 
 def decrypt_caesar(ciphertext):
@@ -29,7 +39,17 @@ def decrypt_caesar(ciphertext):
     Decrypts a ciphertext using a Caesar cipher.
     Add more implementation details here.
     """
-    pass  # Your implementation here
+    plainText = ''
+    for i in cipherText:
+        if (97 <= ord(i) <= 122):
+            a = (((ord(i) - 97) - 3) % 26) + 97
+            plainText += chr(a)
+        elif (65 <= ord(i) <= 90):
+            a = (((ord(i) - 65) - 3) % 26) + 65
+            plainText += chr(a)
+        else:
+            plainText += i
+    return plainText
 
 
 """
